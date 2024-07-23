@@ -21,9 +21,9 @@ function Banner() {
                     <div className="text-white-100 md:text-4xl text-lg md:mx-5 mx-3 md:py-3">
                         We are here to
                         <ReactTyped
-                            className='text-[#5b2a86] md:text-3xl py-1 text-lg md:py-3'
+                            className='text-[#5b2a86] md:text-3xl py-1 text-lg md:py-3 mx-2'
                             strings={[
-                                "Providing stable and sustainable solutions",
+                                "Provide stable and sustainable solutions",
                             ]}
                             typeSpeed={60}
                             backSpeed={50}

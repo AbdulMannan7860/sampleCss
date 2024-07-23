@@ -9,7 +9,7 @@ function Banner() {
 
     return (
         <div style={divStyle} className="w-full px-2 md:px-[60px] content-center bg-cover bg-no-repeat bg-center h-[300px] md:h-[90vh]">
-            <div className='text-left font-semibold w-[1240px] mx-auto'>
+            <div className='text-left font-semibold max-w-[1240px] mx-auto'>
                 <div className="md:text-4xl text-lg py-1 text-white-100 px-3 md:px-12 md:py-3">
                     we build
                 </div>

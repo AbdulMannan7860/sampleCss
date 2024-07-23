@@ -57,8 +57,8 @@ function Header() {
     };
 
     return (
-        <div className='absolute px-2 md:py-1 w-full'>
-            <div className='max-w-[1240px] items-center md:py-2 flex justify-between mx-auto'>
+        <div className='fixed w-full md:py-2 z-50'>
+            <div className='bg-slate-950 shadow max-w-[1400px] px-12 bg-opacity-30 backdrop-blur-sm rounded items-center md:py-2 flex justify-between mx-auto'>
                 <motion.div
                     className='flex my-auto'
                     variants={containerVariants}
@@ -95,7 +95,7 @@ function Header() {
                     ))}
                 </ul>
                 {/* responsive menu */}
-                <ul className={`duration-500 md:hidden w-screen fixed h-screen bg-[#662e9b] text-white-100 gap-5 top-[45px] ${toggle ? 'left-[0]' : 'left-[-100%]'}`}>
+                <ul className={`duration-500 md:hidden w-full fixed h-screen bg-[#662e9b] text-white-100 gap-5 top-[45px] ${toggle ? 'left-[0]' : 'left-[-140%]'}`}>
                     {links.map((items, i) => (
                         <li key={i}>
                             <Link className='flex justify-center text-lg py-5' onClick={() => setToggle(!toggle)} to={items.path}>{items.link}</Link>

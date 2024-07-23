@@ -4,10 +4,10 @@ import Form from '../Contact/Form'
 
 const Contact = () => {
     return (
-        <>
+        <div className='bg-white-200'>
             <Banner />
             <Form />
-        </>
+        </div>
     )
 }
 

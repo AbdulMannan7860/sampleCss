@@ -1,88 +1,69 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { Suspense, lazy } from 'react';
+
+const FaLaptopCode = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaLaptopCode })));
+const FaMobileAlt = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaMobileAlt })));
+const FaShoppingCart = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaShoppingCart })));
+const FaCode = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaCode })));
+const FaCogs = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaCogs })));
+const FaPalette = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaPalette })));
+const FaPencilRuler = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaPencilRuler })));
+const FaPrint = lazy(() => import('react-icons/fa').then(module => ({ default: module.FaPrint })));
 
 const Provide = () => {
   const DesServices = [
-    "Web Design UI / UX",
-    "Application Design",
-    "Logo",
-    "Print Design",
+    { title: "Web Design UI / UX", details: "Craft visually appealing and user-friendly interfaces for websites.", icon: FaPalette },
+    { title: "Application Design", details: "Design intuitive and efficient user interfaces for various applications.", icon: FaPencilRuler },
+    { title: "Logo", details: "Create unique and memorable logos that represent your brand identity.", icon: FaPencilRuler },
+    { title: "Print Design", details: "Design printed materials such as brochures, flyers, and posters with creative flair.", icon: FaPrint },
   ];
+
   const DevServices = [
-    "Web Development",
-    "Mobile App Development",
-    "E-Commerce",
-    "Software Development",
-    "Functional Scripting",
-    "Maintenance"
+    { title: "Web Development", details: "Build responsive and dynamic websites using modern web technologies.", icon: FaLaptopCode },
+    { title: "Mobile App Development", details: "Develop native or cross-platform mobile applications for iOS and Android devices.", icon: FaMobileAlt },
+    { title: "E-Commerce", details: "Create robust and secure e-commerce platforms for online businesses.", icon: FaShoppingCart },
+    { title: "Software Development", details: "Develop custom software solutions tailored to your specific business needs.", icon: FaCode },
+    { title: "Functional Scripting", details: "Automate tasks and streamline workflows with efficient scripting solutions.", icon: FaCode },
+    { title: "Maintenance", details: "Provide ongoing support and maintenance to ensure the smooth operation of your digital products.", icon: FaCogs },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.8
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { x: 20, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1
-    }
-  };
-
-  const ref = useRef(null);
-  const inView = useInView(ref, { threshold: 0.5, triggerOnce: true });
 
   return (
-    <div className='max-w-[1240px] px-4 py-10 mx-auto' ref={ref}>
-      <h1 className='text-lg md:text-3xl py-4 text-left text-black font-semibold'>Our Services</h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:py-0 pb-8'>
-        <motion.div className='w-full col-span-1 flex gap-8 md:flex'
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={containerVariants}>
-          <motion.div
-            className='w-2/4 p-4 md:mx-8 hover:scale-110 hover:shadow-2xl duration-300'
-            variants={itemVariants}
-          >
-            <h1 className='text-lg md:text-3xl text-[#662e9b] font-semibold'>Develop :</h1>
-            <div className='border-2 w-2/12 border-black my-1'></div>
-            <ul className='mt-2 px-5'>
-              {DevServices.map((service, index) => (
-                <motion.li key={index} className='py-1' variants={itemVariants}>{service}</motion.li>
-              ))}
-            </ul>
-          </motion.div>
-          <motion.div
-            className='w-2/4 p-4 md:mx-8 hover:scale-110 hover:shadow-2xl duration-300'
-            variants={itemVariants}
-          >
-            <h1 className='text-lg md:text-3xl text-[#662e9b] font-semibold'>Design :</h1>
-            <div className='border-2 w-2/12 border-black my-1'></div>
-            <ul className='mt-2 px-5'>
-              {DesServices.map((service, index) => (
-                <motion.li key={index} className='py-1' variants={itemVariants}>{service}</motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          className='w-full md:w-3/4 col-span-1 md:rounded-none self-center'
-          variants={itemVariants}
-        >
-          <img
-            src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=600"
-            className='rounded-3xl object-center object-cover'
-            alt=""
-          />
-        </motion.div>
+    <div className='max-w-[1240px] px-4 py-10 mx-auto'>
+      <h1 className='text-lg md:text-3xl py-4 text-center text-[#662e9b] font-bold'>Our Services</h1>
+      <div className='w-full gap-8 md:flex flex-wrap justify-center'>
+        <div className='w-full md:w-5/12 lg:w-4/12 py-3 md:mx-2 mx-auto'>
+          <h1 className='text-lg md:text-2xl text-black font-semibold text-center'>Develop :</h1>
+          <div className='border-2 w-1/12 border-[#662e9b] my-2 mx-auto'></div>
+          <div className='mt-4'>
+            {DevServices.map((service, index) => (
+              <div key={index} className='bg-white shadow-md rounded-lg p-4 mb-6'>
+                <div className='flex items-center mb-2'>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <service.icon className='text-[#662e9b] md:text-xl mr-3' />
+                  </Suspense>
+                  <h2 className='font-semibold md:text-xl text-black'>{service.title}</h2>
+                </div>
+                <p className='text-xs md:text-sm text-gray-600'>{service.details}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='w-full md:w-5/12 lg:w-4/12 py-3 md:mx-2 mx-auto'>
+          <h1 className='text-lg md:text-2xl text-black font-semibold text-center'>Design :</h1>
+          <div className='border-2 w-1/12 border-[#662e9b] my-2 mx-auto'></div>
+          <div className='mt-4'>
+            {DesServices.map((service, index) => (
+              <div key={index} className='bg-white shadow-md rounded-lg p-4 mb-6'>
+                <div className='flex items-center mb-2'>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <service.icon className='text-[#662e9b] md:text-xl mr-3' />
+                  </Suspense>
+                  <h2 className='font-semibold md:text-xl text-black'>{service.title}</h2>
+                </div>
+                <p className='text-xs md:text-sm text-gray-600'>{service.details}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

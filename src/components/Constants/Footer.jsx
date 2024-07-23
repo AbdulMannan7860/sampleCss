@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiFillInstagram, AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
+
 
 function Footer() {
     const navigate = useNavigate();
@@ -9,9 +11,14 @@ function Footer() {
     }
 
     return (
-        <div className='bg-[#662e9b] p-4'>
+        <div className='bg-gradient-to-bl from-[#662e9b] to-[#982aff] p-4'>
             <div className='max-w-[1240px] items-center py-2 flex justify-between mx-auto'>
                 <div className='text-white'>
+                    <div className='flex text-2xl gap-x-4'>
+                        <a target='_blank' href="https://www.facebook.com/SaskaSolution"><span><AiFillFacebook /></span></a>
+                        <a target='_blank' href="https://www.instagram.com/saskasolutions/?hl=en"><span><AiFillInstagram /></span></a>
+                        <a target='_blank' href="https://www.linkedin.com/company/94852425"><span><AiFillLinkedin /></span></a>
+                    </div>
                     &copy; {new Date().getFullYear()} SASKA Solutions. All rights reserved.
                 </div>
                 <ul className='hidden md:flex text-white gap-5'>

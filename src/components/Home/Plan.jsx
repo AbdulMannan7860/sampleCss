@@ -18,74 +18,74 @@ function Plan() {
     };
 
     const logoPlanData = [{
-        price: "$30",
+        price: "$10",
+        title: "LOGO STANDARD",
+        design: "",
+        concepts: "2 Orignal Logo Concepts",
+        dedicated: "",
+        revision: "2 Total Revision",
+        formats: "Formats: JPG Only",
+        time: "48 - 72 Hours Turnaround Time",
+        owner: "100% Ownership",
+        satisfaction: "100% Satisfaction",
+        money: "",
+    },
+    {
+        price: "$75",
         title: "LOGO SPECIAL",
-        design: "Free Icon Design",
-        concepts: "4 Orignal Logo Concepts",
-        dedicated: "2 Dedicated Logo Designs",
-        revision: "4 Revision",
-        formats: "Formats :JPEG Only",
-        time: "24 - 48 Hours Turnaround Time",
+        design: "",
+        concepts: "6 Orignal Logo Concepts",
+        dedicated: "",
+        revision: "5 Revisions",
+        formats: "Formats :JPG, PSD, PNG",
+        time: "48 - 72 Hours Turnaround Time",
         owner: "100% Ownership",
         satisfaction: "100% Satisfaction",
-        money: "100% Money Back Gurantee",
+        money: "",
     },
     {
-        price: "$99",
-        title: "LOGO PLUS",
-        design: "Free Icon Design",
-        concepts: "12 Orignal Logo Concepts",
-        dedicated: "4 Dedicated Logo Designs",
-        revision: "Unlimited Revisions",
-        formats: "Formats :JPEG, PSD, EPS, AI, PNG, SVG, ,TIFF",
-        time: "24 - 48 Hours Turnaround Time",
-        owner: "100% Ownership",
-        satisfaction: "100% Satisfaction",
-        money: "100% Money Back Gurantee",
-    },
-    {
-        price: "$250",
+        price: "$165",
         title: "LOGO PREMIUM",
-        design: "Stationery Design (Business Cards, Letterheads, Envelopes)",
-        concepts: "Unlimited Orignal Logo Concepts",
-        dedicated: "8 Dedicated Logo Designs",
+        design: "Unlimited Orignal Logo Concepts",
+        concepts: "Stationery Design (Business Cards, Letterheads, Envelopes)",
+        dedicated: "Grayscale Formats",
         revision: "Unlimited Revisions",
-        formats: "Formats :JPEG, PSD, EPS, AI, PNG, SVG, ,TIFF",
+        formats: "Formats :JPG, AI, PNG, SVG",
         time: "24 - 48 Hours Turnaround Time",
         owner: "100% Ownership",
         satisfaction: "100% Satisfaction",
-        money: "100% Money Back Gurantee",
+        money: "",
     }
     ]
 
     const webPlanData = [{
-        price: "$399",
+        price: "$250",
         title: "BASIC WEBSITE",
-        design: "3 Page Website",
+        design: "3 Page Website Build",
         concepts: "Contact/Query Form",
         dedicated: "1 Banner Design",
-        revision: "Mobile Responsive will be Additional $100",
+        revision: "Additional Charges for Mobile Responsive",
         formats: "Complete Source Files Included",
         time: "Website Initial Concept in 48 Hours",
         owner: "100% Ownership",
         satisfaction: "Complete Design & Development",
-        money: "100% Money Back Gurantee",
+        money: "",
     },
     {
-        price: "$799",
+        price: "$450",
         title: "STARTUP WEBSITE",
         design: "5 Page Website",
         concepts: "Contact/Query/Login Form",
         dedicated: "3 Banner Design",
-        revision: "Mobile Responsive will be Additional $100",
+        revision: "Additional Charges for Mobile Responsive",
         formats: "Complete Source Files Included",
         time: "Website Initial Concept in 48 Hours",
         owner: "100% Ownership",
         satisfaction: "Complete Design & Development",
-        money: "100% Money Back Gurantee",
+        money: "",
     },
     {
-        price: "$1299",
+        price: "$999",
         title: "PROFESSIONAL WEBSITE",
         design: "10 Page Website",
         concepts: "Contact/Query/Login Form & Admin Panel Integration",
@@ -95,7 +95,7 @@ function Plan() {
         time: "Website Initial Concept in 48 Hours",
         owner: "100% Ownership",
         satisfaction: "Complete Design & Development",
-        money: "100% Money Back Gurantee",
+        money: "",
     }
     ]
     const brandPlanData = [{
@@ -106,7 +106,6 @@ function Plan() {
         dedicated: "2 Envelope Concepts",
         revision: "3 Revisions",
         formats: "",
-        time: "3 Business Days Delivery",
         owner: "",
         satisfaction: "100% Satisfaction",
         money: "",
@@ -119,7 +118,6 @@ function Plan() {
         dedicated: "2 Envelope Concepts",
         revision: "5 Revisions",
         formats: "",
-        time: "3 Business Days Delivery",
         owner: "",
         satisfaction: "100% Satisfaction",
         money: "",
@@ -130,10 +128,9 @@ function Plan() {
         design: "4 Bussiness Card Concepts",
         concepts: "2 Letterhead Concepts",
         dedicated: "2 Envelope Concepts",
-        revision: "3 Revisions",
         formats: "Invoice Design",
-        time: "3 Business Days Delivery",
         owner: "T-Shirt Design",
+        revision: "3 Revisions",
         satisfaction: "100% Satisfaction",
         money: "",
     }
@@ -148,66 +145,71 @@ function Plan() {
         planData = brandPlanData;
     }
     return (
-
         <motion.div
             initial={{ opacity: 0, y: 250 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 250 }}
             transition={{ duration: 1 }}
-            className='py-10 px-2'
+            className='py-10 px-2 bg-gradient-to-t from-[#662e9b] to-[#982aff] text-white-100'
             ref={ref}
+            id='plan'
         >
-            <div id='plan' className='max-w-[1240px] mx-auto p-4'>
-                <h1 className='font-serif text-[#662e9b] text-2xl md:text-5xl font-bold text-center'>Our Plans</h1>
-                <p className='text-center pt-4 md:text-lg font-bold text-black'>Choose Your Plan</p>
-                <p className='text-center pt-2 text-[#662e9b] md:text-lg text-bold'>We Provide The Best Services For The Most Reasonable Price</p>
-            </div>
-            <div className="max-w-[1240px] mx-auto md:text-lg py-1 text-center md:py-3 flex justify-evenly">
+            <div className='max-w-[1240px] mx-auto md:text-lg py-1 text-center md:py-3 flex justify-evenly'>
                 <button
                     onClick={() => setPlan('logo')}
-                    className='border-2 border-[#662e9b] mt-4 px-4 py-1 rounded-full text-[#662e9b] focus:bg-[#662e9b] focus:text-white focus:shadow-lg font-bold'
+                    className={`border-2 border-white-100 mt-4 px-4 py-1 rounded-full font-bold ${plan === 'logo' ? 'bg-white-100 text-[#662e9b] shadow-lg' : 'hover:bg-white-100 hover:text-[#662e9b] hover:shadow-md'
+                        }`}
                 >
                     Logo
                 </button>
                 <button
                     onClick={() => setPlan('web')}
-                    className='border-2 border-[#662e9b] mt-4 px-4 py-1 rounded-full text-[#662e9b] focus:bg-[#662e9b] focus:text-white focus:shadow-lg font-bold'
+                    className={`border-2 border-white-100 mt-4 px-4 py-1 rounded-full font-bold ${plan === 'web' ? 'bg-white-100 text-[#662e9b] shadow-lg' : 'hover:bg-white-100 hover:text-[#662e9b] hover:shadow-md'
+                        }`}
                 >
                     Web Design
                 </button>
                 <button
                     onClick={() => setPlan('brand')}
-                    className='border-2 border-[#662e9b] mt-4 px-4 py-1 rounded-full text-[#662e9b] focus:bg-[#662e9b] focus:text-white focus:shadow-lg font-bold'
+                    className={`border-2 border-white-100 mt-4 px-4 py-1 rounded-full font-bold ${plan === 'brand' ? 'bg-white-100 text-[#662e9b] shadow-lg' : 'hover:bg-white-100 hover:text-[#662e9b] hover:shadow-md'
+                        }`}
                 >
                     Branding
                 </button>
             </div>
-
-            <div className="max-w-[1240px] mx-auto p-4 md:grid grid-cols-3 gap-8">
+            <div className='max-w-[1240px] mx-auto p-4 md:grid grid-cols-3 gap-8'>
                 {inView && planData.map((item, index) => (
-                    <div key={index} className="flex flex-col sm:mx-2 shadow-xl h-auto rounded-xl px-4 py-12 border border-[#662e9b] my-5 hover:shadow-2xl hover:scale-105 duration-500">
-                        <span className='text-6xl md:text-2xl font-bold text-black'>{item.price}</span>
+                    <div key={index} className='flex flex-col sm:mx-2 h-full rounded-xl my-5 md:my-auto px-4 pt-12 pb-2 bg-white-100 shadow-md hover:shadow-lg transform hover:scale-105 transition duration-500'>
+                        <span className='text-sm font-semibold text-[#662e9b]'>Starting From</span>
+                        <span className='text-4xl md:text-4xl font-bold text-black'>{item.price}</span>
                         <div className='my-4 border-y-2 border-gray-300'>
-                            <h2 className='text-lg md:text-xl py-4 font-bold text-black'>{item.title}</h2>
+                            <h2 className='text-base md:text-xl py-2 font-bold text-[#662e9b]'>{item.title}</h2>
                         </div>
-                        <div>
+                        <div className='flex-grow'>
                             <ul>
                                 {Object.keys(item).map((key, index) => {
-                                    if (key === 'price' || key === 'title') return null
-                                    return item[key] && <li key={index} className='text-lg md:text-md py-3 flex items-center'>
-                                        <span className='mr-2'><AiOutlineCheckCircle className='text-lg md:text-xl text-[#662e9b]' /></span>
-                                        {item[key]}
-                                    </li>
+                                    if (key === 'price' || key === 'title') return null;
+                                    return item[key] && (
+                                        <li key={index} className='text-sm md:text-sm py-2 text-black font-semibold flex items-center'>
+                                            <span className='mr-2'>
+                                                <AiOutlineCheckCircle className='text-lg md:text-xl text-[#662e9b]' />
+                                            </span>
+                                            {item[key]}
+                                        </li>
+                                    );
                                 })}
                             </ul>
                         </div>
-                        <div className='text-center mt-auto '>
-                            <button onClick={handleClick} className='border-2 border-[#662e9b] mt-4 px-4 py-1 rounded-full text-[#662e9b] hover:text-white hover:bg-[#662e9b] duration-300'>Get Quote</button>
+                        <div className='text-center mt-auto'>
+                            <button onClick={handleClick} className='border-2 border-[#662e9b] mt-4 px-4 py-1 rounded-full text-[#662e9b] font-semibold hover:text-white-100 hover:bg-[#662e9b] transition duration-300'>Get Quote</button>
+                        </div>
+                        <div className='px-4 pt-12 rounded-full text-black'>
+                            <p className='md:text-sm text-xs text-center'>* All turnaround times are applicable on working days (Monday to Friday) only.</p>
                         </div>
                     </div>
                 ))}
             </div>
-        </motion.div >
-    )
+        </motion.div>
+    );
 }
 
-export default Plan
+export default Plan;

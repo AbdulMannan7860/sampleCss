@@ -5,6 +5,7 @@ import Header from "./components/Constants/Header"
 import Portfolio from "./components/Pages/Portfolio"
 import Services from "./components/Pages/Services"
 import Contact from "./components/Pages/Contact"
+import NotFound from "./components/Pages/NotFound"
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/portfolio" element={<Portfolio />}></Route>
           <Route exact path="/services" element={<Services />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
       </Router>
